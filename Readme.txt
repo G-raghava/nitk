@@ -21,7 +21,7 @@ Nitk_cse also contains 5 files :
 Within venv:We have all the imported packages infromation.
 
 Here,we run the 'run.py' in the pycharm with the installed packages like flask,wtfoems,sqlalchemy,etc.
-Then we get the link as http://127.0.0.1:5000/,where we can access all the pages.
+Then we get the link as http://127.0.0.1:5000/,  where we can access all the pages.
 For login---There are two type of login:
                a)student login---can view and update their profile.
                b)faculty login----can view and update their profile over the site.
