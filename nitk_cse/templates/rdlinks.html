@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+<section class="cert" id="cert">
+			<br>
+			<h1 id="certi"> <span>Research</span></h1>
+			<br>
+			<div class="pricing-table">
+				<div class="card middle">
+					<div class="front">
+						<img src="../static/cs.jpeg">
+					</div>
+					<div class="back">
+						<div class="back-content middle">
+
+							<a href="{{ url_for('rdprojectcse') }}"><img src="../static/cselogoback.png " height="300" width="300"></a>
+						</div>
+					</div>
+				</div>
+				<div class="card middle">
+					<div class="front">
+						<img src="../static/eee_building.jpg">
+					</div>
+					<div class="back">
+						<div class="back-content middle">
+                            <a href="{{ url_for('rdprojectece') }}"><img src="../static/ece_logo_back.jpg " height="300" width="300"></a>
+                        </div>
+					</div>
+				</div
+			</div>
+		</section>
+
+
+{% endblock content %}

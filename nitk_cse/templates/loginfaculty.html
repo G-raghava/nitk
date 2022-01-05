@@ -1,0 +1,17 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<p>Welcome To Faculty Login Page</p>
+<a href="{{ url_for('add_professors')}}">Add Professors</a><br>
+<a href="{{ url_for('add_students')}}">Add Students</a><br>
+<a href="{{ url_for('add_rdproject')}}">Add Research and Development Project</a><br>
+
+
+<br><br>
+<button><a href="{{ url_for('home') }}">Back</a> </button>

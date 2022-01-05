@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="homepage">
+<div class="about">
+    <h2>History</h2>
+    <hr />
+    <hr />
+    <img src="../static/history.jpg" width="105%" height ="40%" alt="">
+    <p>National Institute of Technology Karnataka, Surathkal is located in Mangalore City, Karnataka State, India.
+        The Institute was established as Karnataka Regional Engineering College (KREC) in 1960, and upgraded as
+        National Institute of Technology Karnataka (NITK) in 2002.</p>
+    <p> Mangalore is the headquarters of the coastal district of Dakshina Kannada, and boasts an important centre of
+        education, business and trade in the state. Sri. U. Srinivasa Mallya, a visionary and a philanthropist,
+        contributed immensely to the development of the coastal region of Karnataka, and his effort towards
+        establishment of KREC (now NITK) is the most significant one. In recognition of his role as the founder
+        and architect of the institute, the campus premises is named after him as Srinivasnagar.</p>
+    <h3>Vision</h3>
+    <hr />
+    <p class="vision">To facilitate transformation of students into good human beings, responsible citizens and
+        competent professionals, focusing on the assimilation, generation and dissemination of knowledge.</p>
+    <h3>Mission</h3>
+    <hr />
+    <ul>
+        <li>Impart quality education to meet the needs of profession and society,
+            and achieve excellence in teaching-learning and research. </li>
+        <li>Attract and develop talented and committed human resources, and provide an
+            environment conducive to innovation, creativity, team-spirit and entrepreneurial leadership. </li>
+        <li>Facilitate effective interactions among faculty and students, and foster networking with alumni,
+            industries, institutions and other stake-holders.</li>
+        <li>Practice and promote high standards of professional ethics, transparency and accountability.</li>
+    </ul>
+</div>
+
+<div class="news">
+    <h3>News and Upcoming Events</h3>
+    {% for new in news %}
+    <p>{{ new.news }}</p> <a href="{{ new.link }}">{{ new.link_text }}</a>
+    <br><br>
+    {% endfor %}
+</div>
+</div>
+
+{% endblock content %}

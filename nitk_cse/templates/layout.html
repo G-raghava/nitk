@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8b5e0cd93a.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='icon.png')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" type="text/css"> 
+
+</head>
+<body >
+    <header>
+        <div class="container">
+            <div class="top">
+                <div class="logo">
+                  <a href="{{ url_for('home') }}">
+                    <img src ="../static/header.png" alt="" width="1000" height="100">
+                  </a>
+                </div>
+                <div class="search">
+                  <input class="search-txt" type="text" placeholder="Type to search">
+                  <a class="search-btn" href="#">
+                    <i class="fas fa-search"></i>
+                  </a>
+                </div>
+            </div>
+            <div class="middle">
+              <ul class="menu">
+                
+                <!-- <li><a href="{{ url_for('home') }}">Home</a></li> -->
+                <a class="btn btn-primary  mb1 bg-green" href="{{ url_for('home') }}" role="button"   aria-haspopup="true" aria-expanded="false">
+                    Home
+                  </a>
+                    <div class="dropdown show">   
+                    <a class="btn btn-primary dropdown-toggle" href="{{ url_for('programmes') }}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Programmes
+                      </a>
+                <!-- <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a> -->
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url_for('programmes') }}">Undergraduate</a>
+                        <a class="dropdown-item" href="{{ url_for('postgrad') }}">Postgraduate</a>
+                      </div>
+                    </div>
+
+                    <!-- <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="{{ url_for('programmes') }}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Courses
+                          </a>
+                    < !-- <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a> -->
+                        <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{ url_for('programmes') }}">Undergraduate</a>
+                            <a class="dropdown-item" href="{{ url_for('postgrad') }}">Postgraduate</a>
+                            <a class="dropdown-item" href="{{ url_for('doctaral') }}">Doctoral</a>
+                          </div>
+                        </div>  -->
+
+                        <div class="dropdown show">
+                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Departments
+                              </a>
+                        <!-- <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a> -->
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="{{ url_for('csedep') }}">Computer Science and Engineering</a>
+                                <a class="dropdown-item" href="{{ url_for('itdep') }}">Information Technology</a>
+                              </div>
+                            </div>
+
+                            <div class="dropdown show">
+                                <a class="btn  btn-primary  dropdown-toggle" href="{{ url_for('facilities') }}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Facilities
+                                  </a>
+                            <!-- <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a> -->
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ url_for('facilities') }}">Department Facilities</a>
+                                    <a class="dropdown-item" href="{{ url_for('guesthouse') }}">Guest House</a>
+                                    <a class="dropdown-item" href="{{ url_for('campus') }}">Campus Amenities</a>
+                                  </div>
+                                </div>    
+
+                                <a class="btn btn-primary" href="{{ url_for('rdproject')}}" role="button"   aria-haspopup="true" aria-expanded="false">
+                                                 Research
+                                              </a>
+                                    
+                                    
+
+                                        
+                                        <a class="btn btn-primary" href="{{ url_for('placement')}}" role="button"   aria-haspopup="true" aria-expanded="false">
+                                            Placements
+                                          </a>
+                                         <div class="dropdown show">
+                                              <a class="btn btn-primary dropdown-toggle" href="{{ url_for('ranking') }}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Ranking
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                               <a class="dropdown-item" href="{{ url_for('rankingarria') }}">Ariia</a>
+                                               <a class="dropdown-item" href="{{ url_for('rankingnirf') }}">nirf</a>
+
+                                              </div>
+                                           </div>
+
+
+
+                                           <div class="dropdown show">
+                                              <a class="btn btn-primary dropdown-toggle" href="{{ url_for('login') }}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Login
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                               <a class="dropdown-item" href="{{ url_for('login') }}">Student</a>
+                                               <a class="dropdown-item" href="{{ url_for('facultylogin') }}">Faculty</a>
+
+                                              </div>
+                                           </div>
+              </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <div class="footer">
+        <div class="footer-top">
+            <div class="contact">
+               <img src="../static/footer-logo.png" width="100%" height ="20%" alt="">
+                <p>NH 66, Srinivasnagar</p>
+                <p>Surathkal, Mangalore</p>
+                <p>Karnataka 575025</p>
+
+                <p>Contact: 0824 2474000</p>
+                <p>Email: <span><a href="#">registrar@nitk.ac.in</a></span>
+                </p>
+            </div>
+            <div class="connect">
+                <h4>CONNECT WITH US</h4>
+                <P>We're on Social Networks. Follow us & get in touch.</P>
+                <a href="#"><i class="icon fab fa-twitter-square"></i></a>
+                <a href="#"><i class="icon fab fa-facebook-square"></i></a>
+                <a href="#"><i class="icon fab fa-google-plus-square"></i></a>
+                <a href="#"><i class="icon fas fa-rss-square"></i></a>
+                <a href="#"><i class="icon fab fa-vimeo"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-section quick">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Programmes</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Courses</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>People</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Research</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Facilities</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Telephone Directory</a></li>
+                </ul>    
+            </div>
+            <div class="footer-section general">
+                <h4>GENERAL LINKS</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>CMU-NITK Winter School</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>IRIS Portal</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Intranet</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Library</a></li>
+                </ul>
+            </div>
+            <div class="footer-section doctoral">
+                <h4>PH.D STUDENTS</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Announcements</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Courses</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Labs</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Scholarships</a></li>
+                </ul>
+            </div>
+            <div class="footer-section postgraduate">
+                <h4>POSTGRADUATES</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Announcements</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>PG Courses</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Labs</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Stipends</a></li>
+                </ul>
+            </div>
+            <div class="footer-section undergraduate">
+                <h4>UNDERGRADUATES</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Announcements</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>UG Courses</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Labs</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Opportunities</a></li>
+                </ul>
+            </div>
+            <div class="footer-section opening">
+                <h4>OPENINGS</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>Intel Research Fellow</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i>National Career Service Portal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-last">
+            <div class="here">
+            <h6>{% if title %}
+                You are here <i class="fas fa-angle-double-right"></i> {{ title }}
+            {% else %}
+                You are here <i class="fas fa-angle-double-right"></i> Home
+            {% endif %} </h6>
+            </div>
+            <div class="goto">
+                <h6>Go to <i class="fas fa-angle-double-right"></i> <a href="{{ url_for('home') }}">Home</a></h6>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
